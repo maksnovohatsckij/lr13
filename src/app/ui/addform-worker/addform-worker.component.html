@@ -1,0 +1,30 @@
+<div class="row mb-3">
+  <div class="col-12">
+    <h5>Добавить сотрудника</h5>
+  </div>
+  <div class="col-4">
+    <input type="text" class="form-control" placeholder="Имя" [(ngModel)]="name" />
+    <div class="error" style="height: 1.5em;">
+      <span [hidden]="name||!used" style="height: 1.5em;" class="badge badge-pill badge-danger">Поле не может
+        быть пустым</span>
+    </div>
+  </div>
+  <div class="col-4">
+    <input type="text" class="form-control" placeholder="Фамилия" [(ngModel)]="surname" />
+    <div class="error" style="height: 1.5em;">
+      <span [hidden]="surname||!used" style="height: 1.5em;" class="badge badge-pill badge-danger">Поле не
+        может быть пустым</span>
+    </div>
+  </div>
+  <div class="col-4">
+    <select class="custom-select" [(ngModel)]="type">
+      <option [ngValue]="myWorkerType.programmer">Программист</option>
+      <option [ngValue]="myWorkerType.designer">Дизайнер</option>
+      <option [ngValue]="myWorkerType.copywriter">Рекламщик</option>
+      <option [ngValue]="myWorkerType.manager">Менеджер</option>
+    </select>
+  </div>
+  <div class="col-12 mt-1">
+    <button class="btn btn-outline-primary btn-sm" (click)="onAddWorker()">Добавить</button>
+  </div>
+</div>
